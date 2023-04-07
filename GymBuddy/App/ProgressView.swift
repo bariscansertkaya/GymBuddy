@@ -14,11 +14,6 @@ struct ProgressDashboardView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
-            HStack {
-                ProgressRingView(progress: 0.6, title: "Weightlifting")
-                ProgressRingView(progress: 0.8, title: "Cardio")
-            }
-            
             Text("Recent Workouts")
                 .font(.title)
                 .fontWeight(.bold)
@@ -43,6 +38,6 @@ struct ProgressDashboardView: View {
 
 struct ProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressView()
+        ProgressDashboardView()
     }
 }

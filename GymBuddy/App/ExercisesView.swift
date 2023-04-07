@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct ExercisesView: View {
+    let exercises: [Exercise] = Exercise.all()
     var body: some View {
-        Text("Exercises View")
-            .font(.largeTitle)
-            .fontWeight(.bold)
+        ScrollView(.vertical, showsIndicators: false) {
+            ForEach(exercises) { exercise in
+                NavigationLink(destination: ExerciseDetailView(exercise: exercise)) {
+                    ExerciseCardView(exercise: exercise)
+                }
+            }
+        }
     }
 }
 
 struct ExercisesView_Previews: PreviewProvider {
     static var previews: some View {
-        ExercisesView()
+        NavigationView {
+            ExercisesView()
+        }
+        
+        
     }
 }

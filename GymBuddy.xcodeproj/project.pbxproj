@@ -18,7 +18,8 @@
 		F5DCACC429E094C60006E5C1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC329E094C60006E5C1 /* Exercise.swift */; };
 		F5DCACC629E094CD0006E5C1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC529E094CD0006E5C1 /* Workout.swift */; };
 		F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */; };
-		F5DCACCA29E096EB0006E5C1 /* ProgressRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC929E096EB0006E5C1 /* ProgressRingView.swift */; };
+		F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */; };
+		F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,8 @@
 		F5DCACC329E094C60006E5C1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		F5DCACC529E094CD0006E5C1 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
-		F5DCACC929E096EB0006E5C1 /* ProgressRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingView.swift; sourceTree = "<group>"; };
+		F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
+		F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		F5DCACB529E091120006E5C1 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */,
 				F5DCACB829E091790006E5C1 /* OnboardingView.swift */,
 				F5DCACBB29E092DA0006E5C1 /* HomeView.swift */,
 				F5DCACBD29E092EA0006E5C1 /* ProgressView.swift */,
@@ -101,7 +104,7 @@
 		F5DCACB629E0911F0006E5C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F5DCACC929E096EB0006E5C1 /* ProgressRingView.swift */,
+				F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,12 +189,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DCACC029E092FE0006E5C1 /* ExercisesView.swift in Sources */,
+				F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */,
 				F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */,
 				F5DCACC429E094C60006E5C1 /* Exercise.swift in Sources */,
 				F5DCACB929E091790006E5C1 /* OnboardingView.swift in Sources */,
 				F5DCACBC29E092DA0006E5C1 /* HomeView.swift in Sources */,
-				F5DCACCA29E096EB0006E5C1 /* ProgressRingView.swift in Sources */,
 				F5DCACBE29E092EA0006E5C1 /* ProgressView.swift in Sources */,
+				F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */,
 				F5DCACC629E094CD0006E5C1 /* Workout.swift in Sources */,
 				F5DCACC229E093100006E5C1 /* WorkoutsView.swift in Sources */,
 				F5DCACA829E091070006E5C1 /* GymBuddyApp.swift in Sources */,
@@ -331,6 +335,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,6 +365,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

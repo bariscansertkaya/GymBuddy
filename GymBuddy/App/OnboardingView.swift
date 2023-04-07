@@ -14,6 +14,7 @@ struct OnboardingView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.top, 100)
+                .padding(.horizontal,20)
             
             Text("Track your progress, discover new exercises, and customize your workouts with our app.")
                 .font(.body)

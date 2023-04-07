@@ -74,31 +74,6 @@ struct WorkoutCardView: View {
     }
 }
 
-struct ExerciseCardView: View {
-    let exercise: Exercise
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Image(exercise.imageName)
-                .resizable()
-                .frame(width: 120, height: 120)
-                .cornerRadius(10)
-            
-            Text(exercise.name)
-                .font(.headline)
-                .fontWeight(.bold)
-            
-            Text(exercise.description)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 5)
-    }
-}
-
 struct WorkoutDetailView: View {
     let workout: Workout
     

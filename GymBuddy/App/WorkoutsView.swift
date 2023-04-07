@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WorkoutBuilderView: View {
+struct WorkoutsView: View {
     @State private var selectedExercises: Set<Exercise> = []
     @State private var selectedWorkoutName: String = ""
     
@@ -60,6 +60,6 @@ struct WorkoutBuilderView: View {
 
 struct WorkoutsView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutBuilderView()
+        WorkoutsView()
     }
 }
