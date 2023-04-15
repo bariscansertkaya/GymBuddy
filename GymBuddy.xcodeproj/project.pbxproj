@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */; };
+		F5AA9A8729EB267B00A26095 /* ExerciseProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA9A8629EB267B00A26095 /* ExerciseProgress.swift */; };
 		F5DCACA829E091070006E5C1 /* GymBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACA729E091070006E5C1 /* GymBuddyApp.swift */; };
 		F5DCACAC29E091080006E5C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DCACAB29E091080006E5C1 /* Assets.xcassets */; };
 		F5DCACAF29E091080006E5C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DCACAE29E091080006E5C1 /* Preview Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCardView.swift; sourceTree = "<group>"; };
+		F5AA9A8629EB267B00A26095 /* ExerciseProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgress.swift; sourceTree = "<group>"; };
 		F5DCACA429E091070006E5C1 /* GymBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DCACA729E091070006E5C1 /* GymBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymBuddyApp.swift; sourceTree = "<group>"; };
 		F5DCACAB29E091080006E5C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		F5DCACB629E0911F0006E5C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */,
 				F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */,
 			);
 			path = View;
@@ -114,6 +119,7 @@
 			children = (
 				F5DCACC329E094C60006E5C1 /* Exercise.swift */,
 				F5DCACC529E094CD0006E5C1 /* Workout.swift */,
+				F5AA9A8629EB267B00A26095 /* ExerciseProgress.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,10 +197,12 @@
 				F5DCACC029E092FE0006E5C1 /* ExercisesView.swift in Sources */,
 				F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */,
 				F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */,
+				F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */,
 				F5DCACC429E094C60006E5C1 /* Exercise.swift in Sources */,
 				F5DCACB929E091790006E5C1 /* OnboardingView.swift in Sources */,
 				F5DCACBC29E092DA0006E5C1 /* HomeView.swift in Sources */,
 				F5DCACBE29E092EA0006E5C1 /* ProgressView.swift in Sources */,
+				F5AA9A8729EB267B00A26095 /* ExerciseProgress.swift in Sources */,
 				F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */,
 				F5DCACC629E094CD0006E5C1 /* Workout.swift in Sources */,
 				F5DCACC229E093100006E5C1 /* WorkoutsView.swift in Sources */,

@@ -25,6 +25,12 @@ struct ContentView: View {
                     Text("Workouts")
                     Image(systemName: "list.bullet.clipboard")
                 }
+            ProgressView()
+                .tabItem {
+                    Text("Progress")
+                    Image(systemName: "chart.bar")
+                }
+            
         }
     }
 }

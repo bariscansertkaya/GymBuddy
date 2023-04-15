@@ -8,30 +8,30 @@
 import SwiftUI
 
 struct ProgressDashboardView: View {
+    
+    @State var exerciseProgressArray: [ExerciseProgress] = testData
+    
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("My Progress")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+        NavigationView {
             
-            Text("Recent Workouts")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.top)
-            
-            ScrollView(.horizontal) {
-                HStack(spacing: 20) {
-                    ForEach(Workout.all()) { workout in
-                        WorkoutCardView(workout: workout)
-                    }
+            List {
+                ForEach(exerciseProgressArray) { progress in
+                    ProgressCardView(exercise: progress)
                 }
-                .padding(.horizontal)
             }
-            
-            Spacer()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                            .fontWeight(.heavy)
+                    }
+                    
+                }
+            }
         }
-        .padding()
-        .navigationBarTitle("Progress", displayMode: .inline)
     }
 }
 
