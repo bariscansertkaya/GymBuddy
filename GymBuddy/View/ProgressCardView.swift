@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressCardView: View {
-    let exercise: ExerciseProgress
+    let exercise: ProgressEntry
     
     var body: some View {
         HStack {

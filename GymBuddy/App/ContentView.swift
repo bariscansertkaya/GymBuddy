@@ -25,7 +25,7 @@ struct ContentView: View {
                     Text("Workouts")
                     Image(systemName: "list.bullet.clipboard")
                 }
-            ProgressView()
+            ProgressDashboardView()
                 .tabItem {
                     Text("Progress")
                     Image(systemName: "chart.bar")
