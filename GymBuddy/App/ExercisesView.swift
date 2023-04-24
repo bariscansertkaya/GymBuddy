@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ExercisesView: View {
+    
     let exercises: [Exercise] = Exercise.all()
+    
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            ForEach(exercises) { exercise in
-                NavigationLink(destination: ExerciseDetailView(exercise: exercise)) {
-                    ExerciseCardView(exercise: exercise)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(exercises) { exercise in
+                    NavigationLink(destination: ExerciseDetailView(exercise: exercise)) {
+                        ExerciseCardView(exercise: exercise)
+                    }
                 }
             }
         }

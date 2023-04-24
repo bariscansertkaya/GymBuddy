@@ -10,17 +10,14 @@ import Foundation
 struct Exercise: Identifiable,Hashable {
     let id = UUID()
     let name: String
-    let description: String
+    let steps: [String]
     let imageName: String
-    let isPopular: Bool
     
     static func all() -> [Exercise] {
         [
-            Exercise(name: "Squat", description: "Stand with feet shoulder-width apart and lower down into a squat, keeping your chest up and your knees over your toes.", imageName: "squat", isPopular: true),
-            Exercise(name: "Push-Up", description: "Start in a plank position with your hands shoulder-width apart. Lower your chest down towards the ground, keeping your elbows close to your body.", imageName: "push-up", isPopular: true),
-            Exercise(name: "Deadlift", description: "Stand with feet hip-width apart and a weight in front of you. Hinge at the hips and lower down to pick up the weight, keeping your back straight.", imageName: "deadlift", isPopular: true),
-            Exercise(name: "Running", description: "Jog or run at a steady pace for a certain amount of time or distance.", imageName: "running", isPopular: true),
-            Exercise(name: "Jumping Jacks", description: "Jump your legs out wide and clap your hands above your head, then jump back to starting position.", imageName: "jumping_jacks", isPopular: true)
+            Exercise(name: "Squat",
+                     steps: ["Start by standing with your feet shoulder-width apart, with your toes pointing slightly outwards. Keep your chest up and your shoulders back.","Engage your core muscles by pulling your belly button towards your spine.","Slowly lower your body by bending at the knees and hips, as if you are sitting down on a chair. Keep your weight on your heels and your knees pointing in the same direction as your toes.","Lower your body until your thighs are parallel to the ground, or as close as you can comfortably go. Make sure to keep your chest up and your back straight.","Pause for a moment at the bottom of the squat, then push through your heels and stand up to return to the starting position.","Repeat for the desired number of repetitions."],
+                     imageName: "squat"),
         ]
     }
 }

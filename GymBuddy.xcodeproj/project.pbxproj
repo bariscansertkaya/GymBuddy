@@ -22,7 +22,6 @@
 		F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */; };
 		F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */; };
 		F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */; };
-		F5FEA13629F6671B000F2E6C /* ProgressSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEA13529F6671B000F2E6C /* ProgressSheetView.swift */; };
 		F5FEA13829F67E0B000F2E6C /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEA13729F67E0B000F2E6C /* PageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
 		F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F5FEA13529F6671B000F2E6C /* ProgressSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSheetView.swift; sourceTree = "<group>"; };
 		F5FEA13729F67E0B000F2E6C /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +113,6 @@
 			children = (
 				F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */,
 				F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */,
-				F5FEA13529F6671B000F2E6C /* ProgressSheetView.swift */,
 				F5FEA13729F67E0B000F2E6C /* PageView.swift */,
 			);
 			path = View;
@@ -209,7 +206,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DCACC029E092FE0006E5C1 /* ExercisesView.swift in Sources */,
-				F5FEA13629F6671B000F2E6C /* ProgressSheetView.swift in Sources */,
 				F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */,
 				F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */,
 				F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */,

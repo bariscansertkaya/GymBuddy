@@ -12,7 +12,6 @@ struct HomeView: View {
     // MARK: - Properties
     
     let exercises = Exercise.all()
-    let workouts = Workout.all()
     
     // MARK: - UI Elements
     
@@ -25,24 +24,10 @@ struct HomeView: View {
                         .fontWeight(.bold)
                         .padding(.leading)
                     
-                    ForEach(workouts.filter { $0.isFeatured }) { workout in
-                        NavigationLink(destination: WorkoutDetailView(workout: workout)) {
-                            WorkoutCardView(workout: workout)
-                        }
-                    }
-                    .padding()
-                    
                     Text("Popular Exercises")
                         .font(.headline)
                         .fontWeight(.bold)
                         .padding(.leading)
-                    
-                    ForEach(exercises.filter { $0.isPopular }) { exercise in
-                        NavigationLink(destination: ExerciseDetailView(exercise: exercise)) {
-                            ExerciseCardView(exercise: exercise)
-                        }
-                    }
-                    .padding()
                 }
             }
             .navigationBarTitle("Home")

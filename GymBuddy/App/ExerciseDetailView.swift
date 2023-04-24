@@ -11,23 +11,39 @@ struct ExerciseDetailView: View {
     let exercise: Exercise
     
     var body: some View {
-        VStack(alignment: .leading) {
+        ScrollView {
             Image(exercise.imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding()
+                .scaledToFill()
+                .frame(width: 360, height: 240)
+                .cornerRadius(12)
             
             Text(exercise.name)
-                .font(.title)
+                .font(.system(size: 50))
                 .fontWeight(.bold)
                 .padding(.horizontal)
+                .padding(.vertical,5)
+                .foregroundColor(.accentColor)
             
-            Text(exercise.description)
-                .font(.body)
-                .padding(.horizontal)
-                .padding(.bottom)
-            
-            Spacer()
+            VStack(alignment: .leading) {
+                
+                
+                ForEach(0..<exercise.steps.count, id: \.self) { i in
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .frame(width: 40,height: 40)
+                                .foregroundColor(.accentColor)
+                                .padding(.horizontal,5)
+                            Text("\(i+1)")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                        }
+                        Text(exercise.steps[i])
+                    }
+                    .padding(.vertical)
+                }
+            }
         }
         .navigationBarTitle(Text(exercise.name), displayMode: .inline)
     }

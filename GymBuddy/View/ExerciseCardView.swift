@@ -15,23 +15,17 @@ struct ExerciseCardView: View {
             Image(exercise.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 380, height: 240)
+                .frame(width: 360, height: 240)
                 .cornerRadius(12)
             
-            Text(exercise.name)
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.bottom,5)
-                .padding(.top,5)
-                .foregroundColor(.accentColor)
-            
-            Text(exercise.description)
-                .font(.footnote)
-                .fontWeight(.medium)
-                .foregroundColor(.white)
-                .lineLimit(2)
+                Text(exercise.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.vertical,2)
+                    .padding(.leading,5)
+                    .foregroundColor(.accentColor)
+                    .multilineTextAlignment(.leading)
         }
-        .shadow(radius: 5)
         .padding(.bottom, 30)
     }
 }
