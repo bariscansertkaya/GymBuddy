@@ -15,6 +15,7 @@ struct ProgressDashboardView: View {
     @State var newName:String = ""
     @State var newWeight:String = ""
     @State var newReps:String = ""
+    @State var selectedIndex:Int?
     
     
     
@@ -24,6 +25,15 @@ struct ProgressDashboardView: View {
             List {
                 ForEach(progressEntries) { progress in
                     ProgressCardView(exercise: progress)
+                        .onTapGesture {
+                            newName = progress.name
+                            newWeight = progress.weight
+                            newReps = progress.reps
+                            showSheet = true
+                            if let index = progressEntries.firstIndex(of: progress) {
+                                selectedIndex = index
+                            }
+                        }
                 }
             }
             .toolbar {
@@ -49,12 +59,22 @@ struct ProgressDashboardView: View {
                             .multilineTextAlignment(.center)
                             .padding(.horizontal)
                             Button {
+                                
                                 if(newName.isEmpty || newReps.isEmpty || newWeight.isEmpty) {
                                     showAlert = true
                                 }
                                 else {
-                                    let newEntry = ProgressEntry(name: newName, weight: newWeight, reps: newReps)
-                                    progressEntries.append(newEntry)
+                                    //Save Button
+                                    if selectedIndex == nil {
+                                        let newEntry = ProgressEntry(name: newName, weight: newWeight, reps: newReps)
+                                        progressEntries.append(newEntry)
+                                    }
+                                    else {
+                                        progressEntries[selectedIndex!].name = newName
+                                        progressEntries[selectedIndex!].weight = newWeight
+                                        progressEntries[selectedIndex!].reps = newReps
+                                    }
+                                    selectedIndex = nil
                                     showSheet = false
                                 }
                             } label: {

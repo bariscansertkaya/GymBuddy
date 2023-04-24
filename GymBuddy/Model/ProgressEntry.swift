@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ProgressEntry: Identifiable {
+struct ProgressEntry: Identifiable,Equatable {
     let id = UUID()
-    let name:String
-    let weight:String
-    let reps:String
+    var name:String
+    var weight:String
+    var reps:String
     
     
 }
