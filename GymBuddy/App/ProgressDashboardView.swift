@@ -17,8 +17,6 @@ struct ProgressDashboardView: View {
     @State var newReps:String = ""
     @State var selectedIndex:Int?
     
-    
-    
     var body: some View {
         NavigationView {
             
@@ -40,6 +38,7 @@ struct ProgressDashboardView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
                     Button { //Plus button clicked
+                        selectedIndex = nil
                         clearTextFields()
                         showSheet = true
                     } label: {
@@ -48,7 +47,7 @@ struct ProgressDashboardView: View {
                     }
                     .sheet(isPresented: $showSheet) {
                         VStack(spacing: 30) {
-                            Text("New Entry")
+                            Text("Progress Entry")
                                 .font(.largeTitle)
                             Group {
                                 TextField("Name", text: $newName)
@@ -66,13 +65,10 @@ struct ProgressDashboardView: View {
                                 else {
                                     //Save Button
                                     if selectedIndex == nil {
-                                        let newEntry = ProgressEntry(name: newName, weight: newWeight, reps: newReps)
-                                        progressEntries.append(newEntry)
+                                        createEntry()
                                     }
                                     else {
-                                        progressEntries[selectedIndex!].name = newName
-                                        progressEntries[selectedIndex!].weight = newWeight
-                                        progressEntries[selectedIndex!].reps = newReps
+                                        editEntry()
                                     }
                                     selectedIndex = nil
                                     showSheet = false
@@ -96,6 +92,17 @@ struct ProgressDashboardView: View {
         newName = ""
         newWeight = ""
         newReps = ""
+    }
+    
+    func createEntry() {
+        let newEntry = ProgressEntry(name: newName, weight: newWeight, reps: newReps)
+        progressEntries.append(newEntry)
+    }
+    
+    func editEntry() {
+        progressEntries[selectedIndex!].name = newName
+        progressEntries[selectedIndex!].weight = newWeight
+        progressEntries[selectedIndex!].reps = newReps
     }
 }
 

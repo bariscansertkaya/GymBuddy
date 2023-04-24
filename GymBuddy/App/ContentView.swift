@@ -8,30 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+    
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Text("Home")
-                    Image(systemName: "house")
+        
+        ZStack {
+            if(isOnboardingViewActive) {
+                OnboardingView()
+            }
+            else {
+                TabView {
+                    WorkoutsView()
+                        .tabItem {
+                            Text("Workouts")
+                            Image(systemName: "list.bullet.clipboard")
+                        }
+                    ExercisesView()
+                        .tabItem {
+                            Text("Exercises")
+                            Image(systemName: "dumbbell")
+                        }
+                    ProgressDashboardView()
+                        .tabItem {
+                            Text("Progress")
+                            Image(systemName: "chart.bar")
+                        }
+                    
                 }
-            ExercisesView()
-                .tabItem {
-                    Text("Exercises")
-                    Image(systemName: "dumbbell")
-                }
-            WorkoutsView()
-                .tabItem {
-                    Text("Workouts")
-                    Image(systemName: "list.bullet.clipboard")
-                }
-            ProgressDashboardView()
-                .tabItem {
-                    Text("Progress")
-                    Image(systemName: "chart.bar")
-                }
-            
+            }
         }
+        .animation(.linear(duration: 0.5), value: isOnboardingViewActive)
     }
 }
 

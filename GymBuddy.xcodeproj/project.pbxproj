@@ -22,6 +22,8 @@
 		F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */; };
 		F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */; };
 		F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */; };
+		F5FEA13629F6671B000F2E6C /* ProgressSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEA13529F6671B000F2E6C /* ProgressSheetView.swift */; };
+		F5FEA13829F67E0B000F2E6C /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEA13729F67E0B000F2E6C /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
 		F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F5FEA13529F6671B000F2E6C /* ProgressSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSheetView.swift; sourceTree = "<group>"; };
+		F5FEA13729F67E0B000F2E6C /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		F5DCACA629E091070006E5C1 /* GymBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				F5FEA13929F68666000F2E6C /* Data */,
 				F5DCACB729E091260006E5C1 /* Model */,
 				F5DCACB629E0911F0006E5C1 /* View */,
 				F5DCACB529E091120006E5C1 /* App */,
@@ -110,6 +115,8 @@
 			children = (
 				F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */,
 				F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */,
+				F5FEA13529F6671B000F2E6C /* ProgressSheetView.swift */,
+				F5FEA13729F67E0B000F2E6C /* PageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +129,13 @@
 				F5AA9A8629EB267B00A26095 /* ProgressEntry.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F5FEA13929F68666000F2E6C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DCACC029E092FE0006E5C1 /* ExercisesView.swift in Sources */,
+				F5FEA13629F6671B000F2E6C /* ProgressSheetView.swift in Sources */,
 				F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */,
 				F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */,
 				F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */,
@@ -203,6 +218,7 @@
 				F5DCACBC29E092DA0006E5C1 /* HomeView.swift in Sources */,
 				F5DCACBE29E092EA0006E5C1 /* ProgressDashboardView.swift in Sources */,
 				F5AA9A8729EB267B00A26095 /* ProgressEntry.swift in Sources */,
+				F5FEA13829F67E0B000F2E6C /* PageView.swift in Sources */,
 				F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */,
 				F5DCACC629E094CD0006E5C1 /* Workout.swift in Sources */,
 				F5DCACC229E093100006E5C1 /* WorkoutsView.swift in Sources */,
@@ -344,6 +360,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,6 +391,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
