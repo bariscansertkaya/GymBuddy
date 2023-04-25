@@ -10,9 +10,6 @@ import Foundation
 struct Workout: Identifiable {
     let id = UUID()
     let name: String
-    let description: String
-    let imageName: String
-    let isFeatured: Bool
     let exercises: [Exercise]
     
 }

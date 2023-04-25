@@ -21,10 +21,6 @@ struct ProgressDashboardView: View {
         NavigationView {
             
             VStack {
-                Text("My Progress")
-                    .font(.system(size: 40))
-                    .fontWeight(.bold)
-                    .foregroundColor(.accentColor)
                 List {
                     HStack {
                         Text("Name")
@@ -49,6 +45,7 @@ struct ProgressDashboardView: View {
                             }
                     }
                 }
+                .navigationBarTitle("My Progress")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         
@@ -61,72 +58,69 @@ struct ProgressDashboardView: View {
                                 .fontWeight(.heavy)
                         }
                         .sheet(isPresented: $showSheet) {
-                            VStack(spacing: 30) {
-                                Text("Progress Entry")
-                                    .font(.largeTitle)
-                                Group {
-                                    TextField("Name", text: $newName)
-                                    TextField("Weight", text: $newWeight)
-                                    TextField("Reps", text: $newReps)
-                                }
-                                .textFieldStyle(.roundedBorder)
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal)
-                                Button {
-                                    
-                                    if(newName.isEmpty || newReps.isEmpty || newWeight.isEmpty) {
-                                        showAlert = true
+                                VStack(spacing: 30) {
+                                    Form {
+                                        Section(header: Text("New Progress")) {
+                                            TextField("Name", text: $newName)
+                                            TextField("Weight", text: $newWeight)
+                                            TextField("Reps", text: $newReps)
+                                        }
                                     }
-                                    else {
-                                        //Save Button
-                                        if selectedIndex == nil {
-                                            createEntry()
+                                    Button {
+                                        
+                                        if(newName.isEmpty || newReps.isEmpty || newWeight.isEmpty) {
+                                            showAlert = true
                                         }
                                         else {
-                                            editEntry()
+                                            //Save Button
+                                            if selectedIndex == nil {
+                                                createEntry()
+                                            }
+                                            else {
+                                                editEntry()
+                                            }
+                                            selectedIndex = nil
+                                            showSheet = false
                                         }
-                                        selectedIndex = nil
-                                        showSheet = false
+                                    } label: {
+                                        Text("Save")
+                                            .fontWeight(.bold)
                                     }
-                                } label: {
-                                    Text("Save")
-                                        .fontWeight(.bold)
-                                }
-                                .padding(.vertical)
-                                .alert("Some text fields are empty", isPresented: $showAlert) {
-                                    Button("OK") { }
+                                    .padding(.vertical)
+                                    .alert("Some text fields are empty", isPresented: $showAlert) {
+                                        Button("OK") { }
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
+                }
             }
-            }
+        
+        func clearTextFields() {
+            newName = ""
+            newWeight = ""
+            newReps = ""
+        }
+        
+        func createEntry() {
+            let newEntry = ProgressEntry(name: newName, weight: newWeight, reps: newReps)
+            progressEntries.append(newEntry)
+        }
+        
+        func editEntry() {
+            progressEntries[selectedIndex!].name = newName
+            progressEntries[selectedIndex!].weight = newWeight
+            progressEntries[selectedIndex!].reps = newReps
         }
     }
     
-    func clearTextFields() {
-        newName = ""
-        newWeight = ""
-        newReps = ""
-    }
     
-    func createEntry() {
-        let newEntry = ProgressEntry(name: newName, weight: newWeight, reps: newReps)
-        progressEntries.append(newEntry)
-    }
     
-    func editEntry() {
-        progressEntries[selectedIndex!].name = newName
-        progressEntries[selectedIndex!].weight = newWeight
-        progressEntries[selectedIndex!].reps = newReps
+    
+    struct ProgressView_Previews: PreviewProvider {
+        static var previews: some View {
+            ProgressDashboardView()
+        }
     }
-}
-
-
-
-
-struct ProgressView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgressDashboardView()
-    }
-}
