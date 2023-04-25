@@ -15,7 +15,7 @@ struct ExerciseDetailView: View {
             Image(exercise.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 360, height: 240)
+                .frame(width: 360, height: 360)
                 .cornerRadius(12)
             
             Text(exercise.name)
@@ -26,8 +26,6 @@ struct ExerciseDetailView: View {
                 .foregroundColor(.accentColor)
             
             VStack(alignment: .leading) {
-                
-                
                 ForEach(0..<exercise.steps.count, id: \.self) { i in
                     HStack {
                         ZStack {
@@ -36,16 +34,38 @@ struct ExerciseDetailView: View {
                                 .foregroundColor(.accentColor)
                                 .padding(.horizontal,5)
                             Text("\(i+1)")
-                                .font(.largeTitle)
+                                .font(.title)
                                 .fontWeight(.bold)
                         }
                         Text(exercise.steps[i])
                     }
-                    .padding(.vertical)
                 }
             }
+            
+            Divider()
+            
+            Text("Tips")
+                .font(.system(size: 50))
+                .fontWeight(.bold)
+                .padding(.horizontal)
+                .padding(.vertical,5)
+                .foregroundColor(.accentColor)
+            
+            VStack(alignment: .leading) {
+                ForEach(exercise.tips, id: \.self) { tip in
+                    HStack {
+                        Circle()
+                            .foregroundColor(.accentColor)
+                            .frame(width: 10,height: 10)
+                            .padding(.horizontal)
+                        Text(tip)
+                    }
+                    
+                }
+            }
+            
         }
-        .navigationBarTitle(Text(exercise.name), displayMode: .inline)
+        //.navigationBarTitle(Text(exercise.name), displayMode: .inline)
     }
 }
 

@@ -20,70 +20,86 @@ struct ProgressDashboardView: View {
     var body: some View {
         NavigationView {
             
-            List {
-                ForEach(progressEntries) { progress in
-                    ProgressCardView(exercise: progress)
-                        .onTapGesture {
-                            newName = progress.name
-                            newWeight = progress.weight
-                            newReps = progress.reps
-                            showSheet = true
-                            if let index = progressEntries.firstIndex(of: progress) {
-                                selectedIndex = index
-                            }
-                        }
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    
-                    Button { //Plus button clicked
-                        selectedIndex = nil
-                        clearTextFields()
-                        showSheet = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .fontWeight(.heavy)
+            VStack {
+                Text("My Progress")
+                    .font(.system(size: 40))
+                    .fontWeight(.bold)
+                    .foregroundColor(.accentColor)
+                List {
+                    HStack {
+                        Text("Name")
+                        Spacer()
+                        Text("Weight")
+                            .offset(x: 58)
+                        Spacer()
+                        Text("Reps")
+                            .offset(x: -5)
                     }
-                    .sheet(isPresented: $showSheet) {
-                        VStack(spacing: 30) {
-                            Text("Progress Entry")
-                                .font(.largeTitle)
-                            Group {
-                                TextField("Name", text: $newName)
-                                TextField("Weight", text: $newWeight)
-                                TextField("Reps", text: $newReps)
-                            }
-                            .textFieldStyle(.roundedBorder)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal)
-                            Button {
-                                
-                                if(newName.isEmpty || newReps.isEmpty || newWeight.isEmpty) {
-                                    showAlert = true
+                    .foregroundColor(.accentColor)
+                    ForEach(progressEntries) { progress in
+                        ProgressCardView(exercise: progress)
+                            .onTapGesture {
+                                newName = progress.name
+                                newWeight = progress.weight
+                                newReps = progress.reps
+                                showSheet = true
+                                if let index = progressEntries.firstIndex(of: progress) {
+                                    selectedIndex = index
                                 }
-                                else {
-                                    //Save Button
-                                    if selectedIndex == nil {
-                                        createEntry()
+                            }
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        
+                        Button { //Plus button clicked
+                            selectedIndex = nil
+                            clearTextFields()
+                            showSheet = true
+                        } label: {
+                            Image(systemName: "plus")
+                                .fontWeight(.heavy)
+                        }
+                        .sheet(isPresented: $showSheet) {
+                            VStack(spacing: 30) {
+                                Text("Progress Entry")
+                                    .font(.largeTitle)
+                                Group {
+                                    TextField("Name", text: $newName)
+                                    TextField("Weight", text: $newWeight)
+                                    TextField("Reps", text: $newReps)
+                                }
+                                .textFieldStyle(.roundedBorder)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
+                                Button {
+                                    
+                                    if(newName.isEmpty || newReps.isEmpty || newWeight.isEmpty) {
+                                        showAlert = true
                                     }
                                     else {
-                                        editEntry()
+                                        //Save Button
+                                        if selectedIndex == nil {
+                                            createEntry()
+                                        }
+                                        else {
+                                            editEntry()
+                                        }
+                                        selectedIndex = nil
+                                        showSheet = false
                                     }
-                                    selectedIndex = nil
-                                    showSheet = false
+                                } label: {
+                                    Text("Save")
+                                        .fontWeight(.bold)
                                 }
-                            } label: {
-                                Text("Save")
-                                    .fontWeight(.bold)
-                            }
-                            .padding(.vertical)
-                            .alert("Some text fields are empty", isPresented: $showAlert) {
-                                Button("OK") { }
+                                .padding(.vertical)
+                                .alert("Some text fields are empty", isPresented: $showAlert) {
+                                    Button("OK") { }
+                                }
                             }
                         }
                     }
-                }
+            }
             }
         }
     }
