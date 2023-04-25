@@ -22,6 +22,8 @@
 		F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */; };
 		F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */; };
 		F5FEA13829F67E0B000F2E6C /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEA13729F67E0B000F2E6C /* PageView.swift */; };
+		F5FEA13E29F84D98000F2E6C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5FEA13C29F84D98000F2E6C /* DataModel.xcdatamodeld */; };
+		F5FEA14029F84E0F000F2E6C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEA13F29F84E0F000F2E6C /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		F5DCACCB29E0A8060006E5C1 /* ExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
 		F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5FEA13729F67E0B000F2E6C /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		F5FEA13D29F84D98000F2E6C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		F5FEA13F29F84E0F000F2E6C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 		F5FEA13929F68666000F2E6C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F5FEA13C29F84D98000F2E6C /* DataModel.xcdatamodeld */,
+				F5FEA13F29F84E0F000F2E6C /* DataController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -205,12 +211,14 @@
 				F5DCACC029E092FE0006E5C1 /* ExercisesView.swift in Sources */,
 				F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */,
 				F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */,
+				F5FEA13E29F84D98000F2E6C /* DataModel.xcdatamodeld in Sources */,
 				F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */,
 				F5DCACC429E094C60006E5C1 /* Exercise.swift in Sources */,
 				F5DCACB929E091790006E5C1 /* OnboardingView.swift in Sources */,
 				F5DCACBE29E092EA0006E5C1 /* ProgressDashboardView.swift in Sources */,
 				F5AA9A8729EB267B00A26095 /* ProgressEntry.swift in Sources */,
 				F5FEA13829F67E0B000F2E6C /* PageView.swift in Sources */,
+				F5FEA14029F84E0F000F2E6C /* DataController.swift in Sources */,
 				F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */,
 				F5DCACC629E094CD0006E5C1 /* Workout.swift in Sources */,
 				F5DCACC229E093100006E5C1 /* WorkoutsView.swift in Sources */,
@@ -419,6 +427,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F5FEA13C29F84D98000F2E6C /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F5FEA13D29F84D98000F2E6C /* DataModel.xcdatamodel */,
+			);
+			currentVersion = F5FEA13D29F84D98000F2E6C /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F5DCAC9C29E091070006E5C1 /* Project object */;
 }

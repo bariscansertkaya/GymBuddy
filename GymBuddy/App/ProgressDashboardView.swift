@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ProgressDashboardView: View {
     
-    @State var progressEntries: [ProgressEntry] = testData
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: []) private var fetchedEntries: FetchedResults<Progress>
+    @State var progressEntries: [ProgressEntry] = []
     @State var showSheet:Bool = false
     @State var showAlert:Bool = false
     @State var newName:String = ""
@@ -19,7 +21,6 @@ struct ProgressDashboardView: View {
     
     var body: some View {
         NavigationView {
-            
             VStack {
                 List {
                     HStack {
@@ -32,6 +33,11 @@ struct ProgressDashboardView: View {
                             .offset(x: -5)
                     }
                     .foregroundColor(.accentColor)
+                    
+                    /*ForEach(fetchedEntries) { entry in
+                        Text(entry.name!)
+                    }*/
+                    
                     ForEach(progressEntries) { progress in
                         ProgressCardView(exercise: progress)
                             .onTapGesture {
@@ -75,6 +81,8 @@ struct ProgressDashboardView: View {
                                             //Save Button
                                             if selectedIndex == nil {
                                                 createEntry()
+                                                
+                                                DataController().addProgress(name: newName, weight: newWeight, reps: newReps, context: managedObjContext)
                                             }
                                             else {
                                                 editEntry()
