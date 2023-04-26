@@ -9,12 +9,12 @@ import SwiftUI
 
 struct WorkoutsView: View {
     
-    @State var workouts: [Workout] = []
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var workouts: FetchedResults<Workout>
     @State var newWorkoutName = ""
-    @State var newWorkoutDescription = ""
     @State var showSheet:Bool = false
     @State var showAlert:Bool = false
-    @State var selectedExercises: Set<Exercise> = []
+    @State var selectedExercises: Set<String> = []
     
     let allExercises: [Exercise] = Exercise.all()
     
@@ -22,9 +22,9 @@ struct WorkoutsView: View {
         NavigationView {
             List {
                 ForEach(workouts) { workout in
-                    Section(header: Text(workout.name)) {
-                        ForEach(workout.exercises) { exercise in
-                            Text(exercise.name)
+                    Section(header: Text(workout.name ?? "Unnamed Workout")) {
+                        ForEach(workout.exercises!, id: \.self) { exercise in
+                            Text(exercise)
                         }
                     }
                 }
@@ -52,16 +52,16 @@ struct WorkoutsView: View {
                             Section(header: Text("EXERCISES")) {
                                 ForEach(allExercises) { exercise in
                                     Button(action: {
-                                        if selectedExercises.contains(exercise) {
-                                            selectedExercises.remove(exercise)
+                                        if selectedExercises.contains(exercise.name) {
+                                            selectedExercises.remove(exercise.name)
                                         } else {
-                                            selectedExercises.insert(exercise)
+                                            selectedExercises.insert(exercise.name)
                                         }
                                     }) {
                                         HStack {
                                             Text(exercise.name)
                                             Spacer()
-                                            if selectedExercises.contains(exercise) {
+                                            if selectedExercises.contains(exercise.name) {
                                                 Image(systemName: "checkmark")
                                             }
                                         }
@@ -74,8 +74,7 @@ struct WorkoutsView: View {
                                 showAlert = true
                             }
                             else {
-                                let newWorkout:Workout = Workout(name: newWorkoutName, exercises: Array(selectedExercises))
-                                workouts.append(newWorkout)
+                                DataController().addWorkout(name: newWorkoutName, exercises: Array(selectedExercises), context: managedObjContext)
                                 showSheet = false
                                 
                                 //Clear sheet

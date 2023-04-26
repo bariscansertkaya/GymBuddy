@@ -10,7 +10,7 @@ import SwiftUI
 struct ProgressDashboardView: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.id)]) private var fetchedEntries: FetchedResults<Progress>
+    @FetchRequest(sortDescriptors: []) private var progressEntries: FetchedResults<Progress>
     @State var showSheet:Bool = false
     @State var showAlert:Bool = false
     @State var newName:String = ""
@@ -33,14 +33,14 @@ struct ProgressDashboardView: View {
                     }
                     .foregroundColor(.accentColor)
                     
-                    ForEach(fetchedEntries) { progress in
+                    ForEach(progressEntries) { progress in
                         ProgressCardView(name: progress.name!, weight: progress.weight!, reps: progress.reps!)
                             .onTapGesture {
                                 newName = progress.name!
                                 newWeight = progress.weight!
                                 newReps = progress.reps!
                                 showSheet = true
-                                if let index = fetchedEntries.firstIndex(of: progress) {
+                                if let index = progressEntries.firstIndex(of: progress) {
                                     selectedIndex = index
                                 }
                             }
@@ -79,7 +79,7 @@ struct ProgressDashboardView: View {
                                             DataController().addProgress(name: newName, weight: newWeight, reps: newReps, context: managedObjContext)
                                         }
                                         else {
-                                            DataController().editProgress(progress: fetchedEntries[selectedIndex!], name: newName, weight: newWeight, reps: newReps, context: managedObjContext)
+                                            DataController().editProgress(progress: progressEntries[selectedIndex!], name: newName, weight: newWeight, reps: newReps, context: managedObjContext)
                                         }
                                         selectedIndex = nil
                                         showSheet = false
@@ -107,7 +107,7 @@ struct ProgressDashboardView: View {
         }
     
     func deleteProgress(index:IndexSet) {
-        index.map { fetchedEntries[$0]}.forEach(managedObjContext.delete)
+        index.map { progressEntries[$0]}.forEach(managedObjContext.delete)
         DataController().save(context: managedObjContext)
         }
     }

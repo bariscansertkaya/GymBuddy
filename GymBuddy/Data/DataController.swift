@@ -48,4 +48,13 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
+    func addWorkout(name:String, exercises:[String], context: NSManagedObjectContext) {
+        let workout = Workout(context: context)
+        workout.id = UUID()
+        workout.name = name
+        workout.exercises = exercises
+        
+        save(context: context)
+    }
+    
 }
