@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct ProgressCardView: View {
-    let exercise: ProgressEntry
+    let name:String
+    let weight:String
+    let reps:String
     
     var body: some View {
         HStack {
-            Text(exercise.name)
+            Text(name)
                 .fontWeight(.bold)
                 .font(.headline)
             Spacer()
             HStack(spacing: 20) {
-                Text(exercise.weight)
+                Text(weight)
                     .frame(width: 50)
-                Text(exercise.reps)
+                Text(reps)
                     .frame(width: 50)
             }
         }
@@ -29,7 +31,7 @@ struct ProgressCardView: View {
 
 struct ProgressCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressCardView(exercise: testData[2])
+        ProgressCardView(name: "Bench Press", weight: "100", reps: "100")
             .previewLayout(.sizeThatFits)
             .padding()
     }

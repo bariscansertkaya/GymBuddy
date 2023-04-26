@@ -10,8 +10,7 @@ import SwiftUI
 struct ProgressDashboardView: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
-    @FetchRequest(sortDescriptors: []) private var fetchedEntries: FetchedResults<Progress>
-    @State var progressEntries: [ProgressEntry] = []
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.id)]) private var fetchedEntries: FetchedResults<Progress>
     @State var showSheet:Bool = false
     @State var showAlert:Bool = false
     @State var newName:String = ""
@@ -34,22 +33,19 @@ struct ProgressDashboardView: View {
                     }
                     .foregroundColor(.accentColor)
                     
-                    /*ForEach(fetchedEntries) { entry in
-                        Text(entry.name!)
-                    }*/
-                    
-                    ForEach(progressEntries) { progress in
-                        ProgressCardView(exercise: progress)
+                    ForEach(fetchedEntries) { progress in
+                        ProgressCardView(name: progress.name!, weight: progress.weight!, reps: progress.reps!)
                             .onTapGesture {
-                                newName = progress.name
-                                newWeight = progress.weight
-                                newReps = progress.reps
+                                newName = progress.name!
+                                newWeight = progress.weight!
+                                newReps = progress.reps!
                                 showSheet = true
-                                if let index = progressEntries.firstIndex(of: progress) {
+                                if let index = fetchedEntries.firstIndex(of: progress) {
                                     selectedIndex = index
                                 }
                             }
                     }
+                    .onDelete(perform: deleteProgress)
                 }
                 .navigationBarTitle("My Progress")
                 .toolbar {
@@ -64,63 +60,55 @@ struct ProgressDashboardView: View {
                                 .fontWeight(.heavy)
                         }
                         .sheet(isPresented: $showSheet) {
-                                VStack(spacing: 30) {
-                                    Form {
-                                        Section(header: Text("New Progress")) {
-                                            TextField("Name", text: $newName)
-                                            TextField("Weight", text: $newWeight)
-                                            TextField("Reps", text: $newReps)
-                                        }
+                            VStack(spacing: 30) {
+                                Form {
+                                    Section(header: Text("New Progress")) {
+                                        TextField("Name", text: $newName)
+                                        TextField("Weight", text: $newWeight)
+                                        TextField("Reps", text: $newReps)
                                     }
-                                    Button {
-                                        
-                                        if(newName.isEmpty || newReps.isEmpty || newWeight.isEmpty) {
-                                            showAlert = true
+                                }
+                                Button {
+                                    
+                                    if(newName.isEmpty || newReps.isEmpty || newWeight.isEmpty) {
+                                        showAlert = true
+                                    }
+                                    else {
+                                        //Save Button
+                                        if selectedIndex == nil {
+                                            DataController().addProgress(name: newName, weight: newWeight, reps: newReps, context: managedObjContext)
                                         }
                                         else {
-                                            //Save Button
-                                            if selectedIndex == nil {
-                                                createEntry()
-                                                
-                                                DataController().addProgress(name: newName, weight: newWeight, reps: newReps, context: managedObjContext)
-                                            }
-                                            else {
-                                                editEntry()
-                                            }
-                                            selectedIndex = nil
-                                            showSheet = false
+                                            DataController().editProgress(progress: fetchedEntries[selectedIndex!], name: newName, weight: newWeight, reps: newReps, context: managedObjContext)
                                         }
-                                    } label: {
-                                        Text("Save")
-                                            .fontWeight(.bold)
+                                        selectedIndex = nil
+                                        showSheet = false
                                     }
-                                    .padding(.vertical)
-                                    .alert("Some text fields are empty", isPresented: $showAlert) {
-                                        Button("OK") { }
-                                        }
-                                    }
+                                } label: {
+                                    Text("Save")
+                                        .fontWeight(.bold)
+                                }
+                                .padding(.vertical)
+                                .alert("Some text fields are empty", isPresented: $showAlert) {
+                                    Button("OK") { }
                                 }
                             }
                         }
                     }
                 }
             }
-        
-        func clearTextFields() {
+        }
+    }
+    
+    func clearTextFields() {
             newName = ""
             newWeight = ""
             newReps = ""
         }
-        
-        func createEntry() {
-            let newEntry = ProgressEntry(name: newName, weight: newWeight, reps: newReps)
-            progressEntries.append(newEntry)
-        }
-        
-        func editEntry() {
-            progressEntries[selectedIndex!].name = newName
-            progressEntries[selectedIndex!].weight = newWeight
-            progressEntries[selectedIndex!].reps = newReps
+    
+    func deleteProgress(index:IndexSet) {
+        index.map { fetchedEntries[$0]}.forEach(managedObjContext.delete)
+        DataController().save(context: managedObjContext)
         }
     }
     
