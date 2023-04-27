@@ -22,12 +22,9 @@ struct WorkoutsView: View {
         NavigationView {
             List {
                 ForEach(workouts) { workout in
-                    Section(header: Text(workout.name ?? "Unnamed Workout")) {
-                        ForEach(workout.exercises!, id: \.self) { exercise in
-                            Text(exercise)
-                        }
-                    }
+                    WorkoutView(titleText: workout.name!, exercises: workout.exercises!)
                 }
+                .onDelete(perform: deleteWorkout)
             }
             .navigationBarTitle("My Workouts")
             .toolbar {
@@ -38,7 +35,10 @@ struct WorkoutsView: View {
                         Image(systemName: "plus")
                             .fontWeight(.heavy)
                     }
-
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
                 }
             }
             .sheet(isPresented: $showSheet) {
@@ -95,7 +95,12 @@ struct WorkoutsView: View {
             }
         }
     }
-}
+    
+    func deleteWorkout(index:IndexSet) {
+        index.map { workouts[$0]}.forEach(managedObjContext.delete)
+        DataController().save(context: managedObjContext)
+        }
+    }
 
 
 struct WorkoutsView_Previews: PreviewProvider {

@@ -25,7 +25,6 @@ struct ExerciseCardView: View {
                         .padding(.vertical,2)
                         .padding(.leading,5)
                         .foregroundColor(.accentColor)
-                    .multilineTextAlignment(.leading)
                 Spacer ()
                 
                 Image(systemName: "chevron.right")

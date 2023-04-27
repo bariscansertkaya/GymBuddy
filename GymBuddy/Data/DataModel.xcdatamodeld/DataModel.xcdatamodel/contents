@@ -7,7 +7,7 @@
         <attribute name="weight" optional="YES" attributeType="String" defaultValueString="0"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
-        <attribute name="exercises" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="exercises" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" defaultValueString="Empty" customClassName="[String]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
