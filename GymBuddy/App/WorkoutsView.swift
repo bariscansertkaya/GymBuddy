@@ -11,11 +11,10 @@ struct WorkoutsView: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var workouts: FetchedResults<Workout>
-    @State var newWorkoutName = ""
+    @State var workoutNameText = ""
     @State var showSheet:Bool = false
     @State var showAlert:Bool = false
     @State var selectedExercises: Set<String> = []
-    
     let allExercises: [Exercise] = Exercise.all()
     
     var body: some View {
@@ -46,7 +45,7 @@ struct WorkoutsView: View {
                     VStack {
                         Form {
                             Section(header: Text("New Workout")) {
-                                TextField("Name", text: $newWorkoutName)
+                                TextField("Name", text: $workoutNameText)
                             }
                             
                             Section(header: Text("EXERCISES")) {
@@ -74,12 +73,12 @@ struct WorkoutsView: View {
                                 showAlert = true
                             }
                             else {
-                                DataController().addWorkout(name: newWorkoutName, exercises: Array(selectedExercises), context: managedObjContext)
+                                DataController().addWorkout(name: workoutNameText, exercises: Array(selectedExercises), context: managedObjContext)
                                 showSheet = false
                                 
                                 //Clear sheet
                                 selectedExercises.removeAll()
-                                newWorkoutName = ""
+                                workoutNameText = ""
                             }
                         } label: {
                             Text("Save")

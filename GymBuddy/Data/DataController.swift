@@ -8,6 +8,15 @@
 import Foundation
 import CoreData
 
+public extension NSManagedObject {
+
+    convenience init(usedContext: NSManagedObjectContext) {
+        let name = String(describing: type(of: self))
+        let entity = NSEntityDescription.entity(forEntityName: name, in: usedContext)!
+        self.init(entity: entity, insertInto: usedContext)
+    }
+}
+
 class DataController: ObservableObject {
     
     let container = NSPersistentContainer(name: "DataModel")
@@ -15,7 +24,7 @@ class DataController: ObservableObject {
     init() {
         container.loadPersistentStores { description, error in
             if let error = error {
-                print("Failed to load the data \(error.localizedDescription)")
+                print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
     }
