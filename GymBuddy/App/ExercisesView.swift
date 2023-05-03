@@ -11,21 +11,39 @@ struct ExercisesView: View {
     
     @StateObject var viewModel = ExerciseViewModel()
     @State private var query = ""
-    let exercises: [Exercise] = Exercise.all()
+    @State var selectedCategory : Category = .all
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach(viewModel.filteredData) { exercise in
-                    NavigationLink(destination: ExerciseDetailView(exercise: exercise)) {
-                        ExerciseCardView(exercise: exercise)
+            VStack {
+                ScrollView(.horizontal,showsIndicators: false) {
+                    HStack {
+                        CategoryButtonView(name: "Chest", category: $selectedCategory)
+                        CategoryButtonView(name: "Back", category: $selectedCategory)
+                        CategoryButtonView(name: "Shoulders", category: $selectedCategory)
+                        CategoryButtonView(name: "Biceps", category: $selectedCategory)
+                        CategoryButtonView(name: "Triceps", category: $selectedCategory)
+                        CategoryButtonView(name: "Abs", category: $selectedCategory)
+                        CategoryButtonView(name: "Legs", category: $selectedCategory)
+                    }
+                    .padding()
+                }
+                ScrollView(.vertical, showsIndicators: false) {
+                    ForEach(viewModel.filteredData) { exercise in
+                        NavigationLink(destination: ExerciseDetailView(exercise: exercise)) {
+                            ExerciseCardView(exercise: exercise)
+                        }
                     }
                 }
             }
         }
         .searchable(text: $query,placement: .navigationBarDrawer(displayMode: .always), prompt: "Find an exercise")
         .onChange(of: query) { newQuery in
+            selectedCategory = .all
             viewModel.search(with: newQuery)
+        }
+        .onChange(of: selectedCategory) { newCategory in
+            viewModel.searchWithCategory(with: newCategory)
         }
         .onAppear {
             viewModel.search()
@@ -41,7 +59,7 @@ struct ExercisesView: View {
 struct ExercisesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ExercisesView()
+            ExercisesView(selectedCategory: .biceps)
         }
         
         

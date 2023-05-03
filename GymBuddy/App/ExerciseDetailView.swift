@@ -19,7 +19,7 @@ struct ExerciseDetailView: View {
                 .cornerRadius(12)
             
             Text(exercise.name)
-                .font(.system(size: 50))
+                .font(.system(size: 40, weight: .heavy, design: .rounded))
                 .fontWeight(.bold)
                 .padding(.horizontal)
                 .padding(.vertical,5)
@@ -45,7 +45,7 @@ struct ExerciseDetailView: View {
             Divider()
             
             Text("Tips")
-                .font(.system(size: 50))
+                .font(.system(size: 40, weight: .heavy, design: .rounded))
                 .fontWeight(.bold)
                 .padding(.horizontal)
                 .padding(.vertical,5)
@@ -71,6 +71,6 @@ struct ExerciseDetailView: View {
 
 struct ExerciseDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseDetailView(exercise: Exercise.all().first!)
+        ExerciseDetailView(exercise: testData[0])
     }
 }

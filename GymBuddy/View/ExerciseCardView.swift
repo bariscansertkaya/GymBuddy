@@ -15,31 +15,29 @@ struct ExerciseCardView: View {
             Image(exercise.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 360, height: 360)
+                .frame(width: 350, height: 350)
                 .cornerRadius(12)
             
             HStack {
                 Text(exercise.name)
-                        .font(.title)
+                    .font(.system(size: 30, weight: .heavy, design: .rounded))
                         .fontWeight(.bold)
-                        .padding(.vertical,2)
-                        .padding(.leading,5)
                         .foregroundColor(.accentColor)
                 Spacer ()
                 
                 Image(systemName: "chevron.right")
                     .imageScale(.large)
-                    .fontWeight(.bold)
+                    .fontWeight(.heavy)
             }
-            .padding(.horizontal)
+            .padding(.horizontal,20)
         }
-        .padding(.bottom, 30)
+        .padding(.bottom, 20)
     }
 }
 
 struct ExerciseCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseCardView(exercise: Exercise.all()[0])
+        ExerciseCardView(exercise: Exercise(name: "Bench Press", steps: [], tips: [], imageName: "bench-press",category: .chest))
             .previewLayout(.sizeThatFits)
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F55E313029FA7E430039FDEB /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E312F29FA7E430039FDEB /* WorkoutView.swift */; };
+		F59B55C22A02D1AB00D3DDCF /* CategoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59B55C12A02D1AB00D3DDCF /* CategoryButtonView.swift */; };
 		F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */; };
 		F5DBCB312A018D3B00C7C0DA /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DBCB302A018D3B00C7C0DA /* ExerciseViewModel.swift */; };
 		F5DBCB332A01902F00C7C0DA /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DBCB322A01902F00C7C0DA /* EmptyView.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		F55E312F29FA7E430039FDEB /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		F59B55C12A02D1AB00D3DDCF /* CategoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonView.swift; sourceTree = "<group>"; };
 		F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCardView.swift; sourceTree = "<group>"; };
 		F5DBCB302A018D3B00C7C0DA /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		F5DBCB322A01902F00C7C0DA /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				F5FEA13729F67E0B000F2E6C /* PageView.swift */,
 				F55E312F29FA7E430039FDEB /* WorkoutView.swift */,
 				F5DBCB322A01902F00C7C0DA /* EmptyView.swift */,
+				F59B55C12A02D1AB00D3DDCF /* CategoryButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */,
 				F5DBCB332A01902F00C7C0DA /* EmptyView.swift in Sources */,
 				F5FEA13E29F84D98000F2E6C /* DataModel.xcdatamodeld in Sources */,
+				F59B55C22A02D1AB00D3DDCF /* CategoryButtonView.swift in Sources */,
 				F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */,
 				F5DBCB312A018D3B00C7C0DA /* ExerciseViewModel.swift in Sources */,
 				F5DCACC429E094C60006E5C1 /* Exercise.swift in Sources */,

@@ -15,7 +15,7 @@ struct WorkoutsView: View {
     @State var showSheet:Bool = false
     @State var showAlert:Bool = false
     @State var selectedExercises: Set<String> = []
-    let allExercises: [Exercise] = Exercise.all()
+    @StateObject var viewModel = ExerciseViewModel()
     
     var body: some View {
         NavigationView {
@@ -49,7 +49,7 @@ struct WorkoutsView: View {
                             }
                             
                             Section(header: Text("EXERCISES")) {
-                                ForEach(allExercises) { exercise in
+                                ForEach(viewModel.data) { exercise in
                                     Button(action: {
                                         if selectedExercises.contains(exercise.name) {
                                             selectedExercises.remove(exercise.name)
