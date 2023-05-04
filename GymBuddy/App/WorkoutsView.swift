@@ -48,26 +48,43 @@ struct WorkoutsView: View {
                                 TextField("Name", text: $workoutNameText)
                             }
                             
-                            Section(header: Text("EXERCISES")) {
-                                ForEach(viewModel.data) { exercise in
-                                    Button(action: {
-                                        if selectedExercises.contains(exercise.name) {
-                                            selectedExercises.remove(exercise.name)
-                                        } else {
-                                            selectedExercises.insert(exercise.name)
-                                        }
-                                    }) {
-                                        HStack {
-                                            Text(exercise.name)
-                                            Spacer()
-                                            if selectedExercises.contains(exercise.name) {
-                                                Image(systemName: "checkmark")
-                                            }
-                                        }
-                                    }
+                            Section(header: Text("CHEST")) {
+                                ForEach(viewModel.data.filter {$0.category == .chest}) { exercise in
+                                    ExerciseButton(name: exercise.name, selectedExercises: $selectedExercises)
                                 }
                             }
-                        }
+                            Section(header: Text("BACK")) {
+                                ForEach(viewModel.data.filter {$0.category == .back}) { exercise in
+                                    ExerciseButton(name: exercise.name, selectedExercises: $selectedExercises)
+                                }
+                            }
+                            Section(header: Text("SHOULDERS")) {
+                                ForEach(viewModel.data.filter {$0.category == .shoulders}) { exercise in
+                                    ExerciseButton(name: exercise.name, selectedExercises: $selectedExercises)
+                                }
+                            }
+                            Section(header: Text("BICEPS")) {
+                                ForEach(viewModel.data.filter {$0.category == .biceps}) { exercise in
+                                    ExerciseButton(name: exercise.name, selectedExercises: $selectedExercises)
+                                }
+                            }
+                            Section(header: Text("TRICEPS")) {
+                                ForEach(viewModel.data.filter {$0.category == .triceps}) { exercise in
+                                    ExerciseButton(name: exercise.name, selectedExercises: $selectedExercises)
+                                }
+                            }
+                            Section(header: Text("ABS")) {
+                                ForEach(viewModel.data.filter {$0.category == .abs}) { exercise in
+                                    ExerciseButton(name: exercise.name, selectedExercises: $selectedExercises)
+                                }
+                            }
+                            Section(header: Text("LEGS")) {
+                                ForEach(viewModel.data.filter {$0.category == .legs}) { exercise in
+                                    ExerciseButton(name: exercise.name, selectedExercises: $selectedExercises)
+                                }
+                            }
+                        }// Form
+                        
                         Button {
                             if(selectedExercises.isEmpty) {
                                 showAlert = true

@@ -34,8 +34,8 @@ struct ContentView: View {
                             Text("Progress")
                             Image(systemName: "chart.bar")
                         }
-                    
                 }
+                
             }
         }
         .animation(.linear(duration: 0.5), value: isOnboardingViewActive)

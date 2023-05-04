@@ -35,9 +35,10 @@ struct ExercisesView: View {
                         }
                     }
                 }
+                .zIndex(-1)
             }
         }
-        .searchable(text: $query,placement: .navigationBarDrawer(displayMode: .always), prompt: "Find an exercise")
+        .searchable(text: $query,placement: .navigationBarDrawer(displayMode: .automatic), prompt: "Find an exercise")
         .onChange(of: query) { newQuery in
             selectedCategory = .all
             viewModel.search(with: newQuery)
