@@ -19,15 +19,15 @@ struct ContentView: View {
             }
             else {
                 TabView {
+                    ExerciseListView()
+                        .tabItem {
+                            Text("Exercises")
+                            Image(systemName: "dumbbell")
+                        }
                     WorkoutsView()
                         .tabItem {
                             Text("Workouts")
                             Image(systemName: "list.bullet.clipboard")
-                        }
-                    ExercisesView()
-                        .tabItem {
-                            Text("Exercises")
-                            Image(systemName: "dumbbell")
                         }
                     ProgressDashboardView()
                         .tabItem {

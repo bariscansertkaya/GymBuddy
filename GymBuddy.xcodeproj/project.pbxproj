@@ -13,6 +13,9 @@
 		F55E313029FA7E430039FDEB /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55E312F29FA7E430039FDEB /* WorkoutView.swift */; };
 		F59B55C22A02D1AB00D3DDCF /* CategoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59B55C12A02D1AB00D3DDCF /* CategoryButtonView.swift */; };
 		F5AA9A8529EB25EA00A26095 /* ProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */; };
+		F5CE65BF2A07A5DA005C43AE /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE65BE2A07A5DA005C43AE /* ExerciseListView.swift */; };
+		F5CE65C12A07A811005C43AE /* ExerciseCategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE65C02A07A811005C43AE /* ExerciseCategoryRowView.swift */; };
+		F5CE65C32A07B207005C43AE /* ExerciseCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE65C22A07B207005C43AE /* ExerciseCategoryListView.swift */; };
 		F5DBCB312A018D3B00C7C0DA /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DBCB302A018D3B00C7C0DA /* ExerciseViewModel.swift */; };
 		F5DBCB332A01902F00C7C0DA /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DBCB322A01902F00C7C0DA /* EmptyView.swift */; };
 		F5DCACA829E091070006E5C1 /* GymBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACA729E091070006E5C1 /* GymBuddyApp.swift */; };
@@ -38,6 +41,9 @@
 		F55E312F29FA7E430039FDEB /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		F59B55C12A02D1AB00D3DDCF /* CategoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonView.swift; sourceTree = "<group>"; };
 		F5AA9A8429EB25EA00A26095 /* ProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCardView.swift; sourceTree = "<group>"; };
+		F5CE65BE2A07A5DA005C43AE /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		F5CE65C02A07A811005C43AE /* ExerciseCategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCategoryRowView.swift; sourceTree = "<group>"; };
+		F5CE65C22A07B207005C43AE /* ExerciseCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCategoryListView.swift; sourceTree = "<group>"; };
 		F5DBCB302A018D3B00C7C0DA /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		F5DBCB322A01902F00C7C0DA /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		F5DCACA429E091070006E5C1 /* GymBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +124,8 @@
 		F5DCACB529E091120006E5C1 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F5CE65BE2A07A5DA005C43AE /* ExerciseListView.swift */,
+				F5CE65C22A07B207005C43AE /* ExerciseCategoryListView.swift */,
 				F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */,
 				F5DCACB829E091790006E5C1 /* OnboardingView.swift */,
 				F5DCACBD29E092EA0006E5C1 /* ProgressDashboardView.swift */,
@@ -138,6 +146,7 @@
 				F5DBCB322A01902F00C7C0DA /* EmptyView.swift */,
 				F59B55C12A02D1AB00D3DDCF /* CategoryButtonView.swift */,
 				F5538DE62A04137E0094B1C5 /* ExerciseButton.swift */,
+				F5CE65C02A07A811005C43AE /* ExerciseCategoryRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,8 +255,11 @@
 				F5DCACB929E091790006E5C1 /* OnboardingView.swift in Sources */,
 				F5DCACBE29E092EA0006E5C1 /* ProgressDashboardView.swift in Sources */,
 				F5FEA13829F67E0B000F2E6C /* PageView.swift in Sources */,
+				F5CE65C12A07A811005C43AE /* ExerciseCategoryRowView.swift in Sources */,
 				F5FEA14029F84E0F000F2E6C /* DataController.swift in Sources */,
+				F5CE65BF2A07A5DA005C43AE /* ExerciseListView.swift in Sources */,
 				F5DCACCC29E0A8060006E5C1 /* ExerciseCardView.swift in Sources */,
+				F5CE65C32A07B207005C43AE /* ExerciseCategoryListView.swift in Sources */,
 				F5538DED2A041A2C0094B1C5 /* Workout+CoreDataProperties.swift in Sources */,
 				F5DCACC229E093100006E5C1 /* WorkoutsView.swift in Sources */,
 				F5DCACA829E091070006E5C1 /* GymBuddyApp.swift in Sources */,

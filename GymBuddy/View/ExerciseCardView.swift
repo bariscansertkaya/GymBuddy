@@ -11,33 +11,42 @@ struct ExerciseCardView: View {
     let exercise: Exercise
     
     var body: some View {
-        VStack(alignment: .center) {
+        HStack {
             Image(exercise.imageName)
                 .resizable()
-                .scaledToFill()
-                .frame(width: 350, height: 350)
-                .cornerRadius(12)
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .cornerRadius(8)
             
-            HStack {
+            VStack(alignment: .leading) {
                 Text(exercise.name)
-                    .font(.system(size: 30, weight: .heavy, design: .rounded))
-                        .fontWeight(.bold)
-                        .foregroundColor(.accentColor)
-                Spacer ()
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.accentColor)
+                    .padding(.bottom,2)
                 
-                Image(systemName: "chevron.right")
-                    .imageScale(.large)
-                    .fontWeight(.heavy)
+                Text(exercise.steps[0])
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                
             }
-            .padding(.horizontal,20)
+            
+            Spacer()
+            
+            Image(systemName: "chevron.right")
+                .imageScale(.large)
+                .fontWeight(.heavy)
+                .padding(.horizontal,0)
         }
-        .padding(.bottom, 20)
+        .padding(.horizontal,2)
     }
 }
 
 struct ExerciseCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseCardView(exercise: Exercise(name: "Bench Press", steps: [], tips: [], imageName: "bench-press",category: .chest))
+        ExerciseCardView(exercise: Exercise(name: "Dumbbell Lateral Raise", steps: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"], tips: [], imageName: "bench-press",category: .chest))
             .previewLayout(.sizeThatFits)
     }
 }

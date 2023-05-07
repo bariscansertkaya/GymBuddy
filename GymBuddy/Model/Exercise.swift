@@ -15,6 +15,7 @@ public enum Category:String {
     case abs = "Abs"
     case legs = "Legs"
     case back = "Back"
+    case forearms = "Forearms"
     case all = "All"
 }
 
