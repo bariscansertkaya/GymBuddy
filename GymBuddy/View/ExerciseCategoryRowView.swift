@@ -16,21 +16,20 @@ struct ExerciseCategoryRowView: View {
         HStack {
             Image(imageName)
                 .resizable()
-                .frame(width: 90, height: 90)
-                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .scaledToFill()
                 .background(
                     RoundedRectangle(cornerRadius: 5)
-                        .frame(width: 95,height: 95)
+                        .frame(width: 105,height: 105)
                         .foregroundColor(.white)
                 )
-                
-                
             
             VStack(alignment: .leading) {
                 Text(titleText)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+                    .padding(.leading,5)
                 
             } //: VStacK
             
@@ -40,6 +39,7 @@ struct ExerciseCategoryRowView: View {
                 .imageScale(.large)
                 .fontWeight(.heavy)
         }
+        .padding(.horizontal,5)
     }
     
     struct ExerciseCategoryRowView_Previews: PreviewProvider {

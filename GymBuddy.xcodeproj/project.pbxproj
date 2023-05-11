@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F52146D32A0D4F5A007A02DA /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52146D22A0D4F5A007A02DA /* NewWorkoutView.swift */; };
 		F5538DE72A04137E0094B1C5 /* ExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5538DE62A04137E0094B1C5 /* ExerciseButton.swift */; };
 		F5538DEC2A041A2C0094B1C5 /* Workout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5538DEA2A041A2C0094B1C5 /* Workout+CoreDataClass.swift */; };
 		F5538DED2A041A2C0094B1C5 /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5538DEB2A041A2C0094B1C5 /* Workout+CoreDataProperties.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F52146D22A0D4F5A007A02DA /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
 		F5538DE62A04137E0094B1C5 /* ExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseButton.swift; sourceTree = "<group>"; };
 		F5538DEA2A041A2C0094B1C5 /* Workout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F5538DEB2A041A2C0094B1C5 /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -124,13 +126,13 @@
 		F5DCACB529E091120006E5C1 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F5CE65BE2A07A5DA005C43AE /* ExerciseListView.swift */,
-				F5CE65C22A07B207005C43AE /* ExerciseCategoryListView.swift */,
 				F5DCACCD29E0A9B20006E5C1 /* ContentView.swift */,
-				F5DCACB829E091790006E5C1 /* OnboardingView.swift */,
-				F5DCACBD29E092EA0006E5C1 /* ProgressDashboardView.swift */,
-				F5DCACBF29E092FE0006E5C1 /* ExercisesView.swift */,
+				F5CE65BE2A07A5DA005C43AE /* ExerciseListView.swift */,
 				F5DCACC129E093100006E5C1 /* WorkoutsView.swift */,
+				F5DCACBD29E092EA0006E5C1 /* ProgressDashboardView.swift */,
+				F5DCACB829E091790006E5C1 /* OnboardingView.swift */,
+				F5CE65C22A07B207005C43AE /* ExerciseCategoryListView.swift */,
+				F5DCACBF29E092FE0006E5C1 /* ExercisesView.swift */,
 				F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */,
 			);
 			path = App;
@@ -147,6 +149,7 @@
 				F59B55C12A02D1AB00D3DDCF /* CategoryButtonView.swift */,
 				F5538DE62A04137E0094B1C5 /* ExerciseButton.swift */,
 				F5CE65C02A07A811005C43AE /* ExerciseCategoryRowView.swift */,
+				F52146D22A0D4F5A007A02DA /* NewWorkoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				F5DCACB929E091790006E5C1 /* OnboardingView.swift in Sources */,
 				F5DCACBE29E092EA0006E5C1 /* ProgressDashboardView.swift in Sources */,
 				F5FEA13829F67E0B000F2E6C /* PageView.swift in Sources */,
+				F52146D32A0D4F5A007A02DA /* NewWorkoutView.swift in Sources */,
 				F5CE65C12A07A811005C43AE /* ExerciseCategoryRowView.swift in Sources */,
 				F5FEA14029F84E0F000F2E6C /* DataController.swift in Sources */,
 				F5CE65BF2A07A5DA005C43AE /* ExerciseListView.swift in Sources */,

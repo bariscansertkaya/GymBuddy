@@ -11,7 +11,7 @@ struct ExerciseDetailView: View {
     let exercise: Exercise
     
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical,showsIndicators: false) {
             Image(exercise.imageName)
                 .resizable()
                 .scaledToFill()

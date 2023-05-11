@@ -10,6 +10,16 @@ import SwiftUI
 struct ExerciseListView: View {
     var body: some View {
         NavigationStack {
+            
+            HStack {
+                Text("Exercises")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .padding(.leading)
+                
+                Spacer()
+            }
+            
             ScrollView(.vertical,showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
                     NavigationLink {
@@ -55,8 +65,6 @@ struct ExerciseListView: View {
                     
                 }
             }
-            .navigationTitle("Exercises")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

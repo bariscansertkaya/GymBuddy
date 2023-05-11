@@ -21,6 +21,17 @@ struct ProgressDashboardView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                HStack {
+                    Text("My Progress")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .padding(.leading)
+                    
+                    Spacer()
+                }
+                
+                
                 List {
                     HStack {
                         Text("Name")
@@ -47,7 +58,6 @@ struct ProgressDashboardView: View {
                     }
                     .onDelete(perform: deleteProgress)
                 }
-                .navigationBarTitle("My Progress")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         
