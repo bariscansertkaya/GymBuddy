@@ -69,13 +69,7 @@ struct NewWorkoutView: View {
                 .fontWeight(.bold)
             }
             
-                TextField("Name...", text: $workoutName)
-                    .frame(width: 360, height: 40, alignment: .center)
-                    .multilineTextAlignment(.center)
-                    .font(.title2)
-                    .fontWeight(.light)
-                    .background(Color(UIColor.systemGray5))
-                    .cornerRadius(8)
+            TextFieldView(name: "Name...", text: $workoutName)
             
             Button {
                 if(selectedExercises.isEmpty) {
@@ -90,15 +84,7 @@ struct NewWorkoutView: View {
                     dismiss()
                 }
             } label: {
-                Text("Save")
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .foregroundColor(.accentColor)
-                            .frame(width: 150, height: 50, alignment: .center)
-                    )
+                ButtonLabelView(name: "Save", width: 150, height: 50)
             }
             .alert("You haven't selected any exercises", isPresented: $showAlert) {
                 Button("OK") { }
