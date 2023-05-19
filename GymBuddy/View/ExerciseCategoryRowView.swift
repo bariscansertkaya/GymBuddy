@@ -19,8 +19,8 @@ struct ExerciseCategoryRowView: View {
                 .frame(width: 100, height: 100)
                 .scaledToFill()
                 .background(
-                    RoundedRectangle(cornerRadius: 5)
-                        .frame(width: 105,height: 105)
+                    RoundedRectangle(cornerRadius: 8)
+                        .frame(width: 100,height: 100)
                         .foregroundColor(.white)
                 )
             
@@ -46,9 +46,6 @@ struct ExerciseCategoryRowView: View {
         static var previews: some View {
             ScrollView {
                 ExerciseCategoryRowView(imageName: "biceps", titleText: "Chest")
-                    .previewLayout(.sizeThatFits)
-                    .padding()
-                ExerciseCategoryRowView(imageName: "shoulders", titleText: "Chest")
                     .previewLayout(.sizeThatFits)
                     .padding()
             }

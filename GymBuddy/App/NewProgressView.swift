@@ -27,9 +27,9 @@ struct NewProgressView: View {
                 .font(.largeTitle)
                 .fontWeight(.heavy)
             
-            TextFieldView(name: "Name...", text: $name)
-            TextFieldView(name: "Weight...", text: $weight)
-            TextFieldView(name: "Reps...", text: $reps)
+            TextFieldView(name: "Name", text: $name)
+            TextFieldView(name: "Weight", text: $weight)
+            TextFieldView(name: "Reps", text: $reps)
             
             Button {
                 if(name.isEmpty || weight.isEmpty || reps.isEmpty) {

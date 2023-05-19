@@ -69,7 +69,7 @@ struct NewWorkoutView: View {
                 .fontWeight(.bold)
             }
             
-            TextFieldView(name: "Name...", text: $workoutName)
+            TextFieldView(name: "Name", text: $workoutName)
             
             Button {
                 if(selectedExercises.isEmpty) {

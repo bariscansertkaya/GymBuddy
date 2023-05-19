@@ -27,7 +27,6 @@
 		F5DCACAF29E091080006E5C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DCACAE29E091080006E5C1 /* Preview Assets.xcassets */; };
 		F5DCACB929E091790006E5C1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACB829E091790006E5C1 /* OnboardingView.swift */; };
 		F5DCACBE29E092EA0006E5C1 /* ProgressDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACBD29E092EA0006E5C1 /* ProgressDashboardView.swift */; };
-		F5DCACC029E092FE0006E5C1 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACBF29E092FE0006E5C1 /* ExercisesView.swift */; };
 		F5DCACC229E093100006E5C1 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC129E093100006E5C1 /* WorkoutsView.swift */; };
 		F5DCACC429E094C60006E5C1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC329E094C60006E5C1 /* Exercise.swift */; };
 		F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */; };
@@ -60,7 +59,6 @@
 		F5DCACAE29E091080006E5C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5DCACB829E091790006E5C1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F5DCACBD29E092EA0006E5C1 /* ProgressDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDashboardView.swift; sourceTree = "<group>"; };
-		F5DCACBF29E092FE0006E5C1 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 		F5DCACC129E093100006E5C1 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		F5DCACC329E094C60006E5C1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				F5DCACBD29E092EA0006E5C1 /* ProgressDashboardView.swift */,
 				F5DCACB829E091790006E5C1 /* OnboardingView.swift */,
 				F5CE65C22A07B207005C43AE /* ExerciseCategoryListView.swift */,
-				F5DCACBF29E092FE0006E5C1 /* ExercisesView.swift */,
 				F5DCACC729E095D40006E5C1 /* ExerciseDetailView.swift */,
 			);
 			path = App;
@@ -255,7 +252,6 @@
 				F55E313029FA7E430039FDEB /* WorkoutView.swift in Sources */,
 				F5538DEC2A041A2C0094B1C5 /* Workout+CoreDataClass.swift in Sources */,
 				F5538DE72A04137E0094B1C5 /* ExerciseButton.swift in Sources */,
-				F5DCACC029E092FE0006E5C1 /* ExercisesView.swift in Sources */,
 				F5DCACCE29E0A9B20006E5C1 /* ContentView.swift in Sources */,
 				F5DCACC829E095D40006E5C1 /* ExerciseDetailView.swift in Sources */,
 				F5DBCB332A01902F00C7C0DA /* EmptyView.swift in Sources */,
