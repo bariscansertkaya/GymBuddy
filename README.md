@@ -2,7 +2,7 @@
 GymBuddy is a workout tracking & planning app created with SwiftUI framework.
 
 ## About
-GymBuddy was created for a lifter&programmer for people to plan workouts and track their progress.
+GymBuddy was created by a programmer&lifter for people to plan workouts and track their progress. GymBuddy helps you to make your workouts more efficient.
 
 
 ## Screenshots
